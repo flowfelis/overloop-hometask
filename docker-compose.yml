@@ -2,7 +2,9 @@ version: '3.1'
 services:
   app:
     build: .
-    command: python3 manage.py runserver 0.0.0.0:8000
+    command: >
+      bash -c "python3 setup_and_seed.py
+      && python3 manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/django-tech-test
     ports:
