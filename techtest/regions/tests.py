@@ -94,5 +94,5 @@ class RegionViewTestCase(TestCase):
 
     def test_removes_region(self):
         response = self.client.delete(self.url)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 204)
         self.assertEqual(Region.objects.count(), 0)

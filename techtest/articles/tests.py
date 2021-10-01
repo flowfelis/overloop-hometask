@@ -178,5 +178,5 @@ class ArticleViewTestCase(TestCase):
 
     def test_removes_article(self):
         response = self.client.delete(self.url)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 204)
         self.assertEqual(Article.objects.count(), 0)
