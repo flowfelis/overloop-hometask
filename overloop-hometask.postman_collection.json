@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "e086d85f-dff6-4f53-a4f4-e3525622255a",
+		"name": "overloop-hometask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authors",
+			"item": [
+				{
+					"name": "authors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/authors",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authors",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"my name\",\n    \"last_name\": \"my last name\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/authors/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"authors",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authors/<id>",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/authors/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"authors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authors/<id>",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Veli\",\n    \"last_name\": \"Bacakww\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/authors/2/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"authors",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authors/<id>",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/authors/1/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"authors",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "regions",
+			"item": [
+				{
+					"name": "regions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/regions/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"regions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "regions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"TR\",\n    \"name\": \"Turkey\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/regions/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"regions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "regions/<id>",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/regions/5/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"regions",
+								"5",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "regions/<id>",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"YT\",\n    \"name\": \"YerTEQ\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/regions/1/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"regions",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "regions/<id>",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/regions/2/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"regions",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "articles",
+			"item": [
+				{
+					"name": "articles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/articles/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"articles",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "articles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"my title\",\n    \"content\": \"my content\",\n    \"regions\": [\n            {\n                \"code\": \"AU\",\n                \"name\": \"Austria\",\n                \"id\": 3\n            },\n            {\n                \"code\": \"US\",\n                \"name\": \"United States of America\",\n                \"id\": 4\n            }\n        ],\n    \"author\": {\n        \"first_name\": \"Veli\",\n        \"id\": 2,\n        \"last_name\": \"Bacakww\"\n    }\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/articles/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"articles",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "articles/<id>",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/articles/4/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"articles",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "articles/<id>",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"my title\",\n    \"content\": \"my content\",\n    \"regions\": [\n            {\n                \"code\": \"AU\",\n                \"name\": \"Austria changed\",\n                \"id\": 3\n            },\n            {\n                \"code\": \"US\",\n                \"name\": \"United States of America changed\",\n                \"id\": 4\n            }\n        ],\n    \"author\": {\n        \"first_name\": \"Veli changed\",\n        \"id\": 2,\n        \"last_name\": \"Bacakww changed\"\n    }\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/articles/6/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"articles",
+								"6",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "articles/<id>",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/articles/1/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"articles",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
