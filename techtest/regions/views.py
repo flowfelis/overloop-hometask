@@ -41,4 +41,4 @@ class RegionView(View):
 
     def delete(self, request, *args, **kwargs):
         self.region.delete()
-        return json_response()
+        return json_response(status=204)
