@@ -21,14 +21,16 @@ class ArticleSchema(Schema):
         required=False, serialize="get_regions", deserialize="load_regions"
     )
     author = fields.Method(
-        required=False, serialize="get_author", deserialize="load_author"
+        required=False, allow_none=True, serialize="get_author", deserialize="load_author"
     )
 
     def get_author(self, article):
-        return AuthorSchema().dump(article.author)
+        return AuthorSchema().dump(article.author) or None
 
     def load_author(self, author):
-        return Author.objects.get_or_create(id=author.get('id'), defaults=author)[0]
+        if author:
+            return Author.objects.get_or_create(id=author.get('id'), defaults=author)[0]
+        return None
 
     def get_regions(self, article):
         return RegionSchema().dump(article.regions.all(), many=True)
